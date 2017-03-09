@@ -4,3 +4,14 @@
 <%= @user.name %>
 
 </h1>
+
+<div class="row">
+  <div class="col-mid-6 col-md-offset-3">
+    <ul>
+      <li><b>Location:</b> <%= @user.location %></li>
+      <li><b>Biography:</b> <%= @user.bio %></li>
+    </ul>
+    <%= link_to "Edit", edit_user_path(@user) if current_user == @user %>
+  </div>
+</div>
+
