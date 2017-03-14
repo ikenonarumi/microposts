@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   put 'update', to: 'users#update'
 
   resources :users
+  resources :microposts
 end
