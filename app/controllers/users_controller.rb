@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.order(created_at: :desc)
   end
   
+  def avator_for
+    @user = User.find(params[:id])
+    send_data(@user.avatar)
+  end
+  
   def new
     @user = User.new
   end
@@ -51,7 +56,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :location, :bio,
-                                 :password_confirmation)
+                                 :password_confirmation, :avatar)
   end
   
   def set_user

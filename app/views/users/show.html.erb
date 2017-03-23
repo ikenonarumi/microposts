@@ -6,6 +6,7 @@
         <%= @user.name %>
       </h1>
     </section>
+    <%= image_tag @user.avatar.url if @user.avatar? %>
     <section class="stats">
       <%= render 'users/stats' %>
     </section>
