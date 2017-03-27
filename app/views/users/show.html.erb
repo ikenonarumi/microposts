@@ -9,6 +9,7 @@
     <%= image_tag @user.avatar.url if @user.avatar? %>
     <section class="stats">
       <%= render 'users/stats' %>
+      <%= link_to "favorites", favorites_user_path %>
     </section>
   </aside>
 

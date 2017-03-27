@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   get 'edit', to: 'users#edit'
   patch 'update', to: 'users#update'
   put 'update', to: 'users#update'
-
+  
   resources :users
   resources :microposts
   resources :relationships, only: [:create, :destroy]
   resources :users do
     member do
-      get :followings, :followers
+      get :followings, :followers, :favorites
     end
   end
   resources :micropost do
